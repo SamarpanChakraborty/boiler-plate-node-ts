@@ -1,8 +1,8 @@
 import express from "express";
 import { injectable } from "inversify";
+import { DummyRoute } from "./routes/dummy.routes";
 const cookieParser = require('cookie-parser');
-import { UserRoute } from './routes/user.route';
-import { AuthRoute } from './routes/auth.route';
+
 
 
 @injectable()
@@ -10,10 +10,7 @@ import { AuthRoute } from './routes/auth.route';
 export class App {
 
 	public express: express.Application;
-	constructor(
-		private userRoute: UserRoute,
-		private authRoute: AuthRoute
-	) {
+	constructor(private _dummyRouter: DummyRoute) {
 		this.express = express();
 		this.initializeMiddlewares();
 		this.initializeRoute();
@@ -27,7 +24,7 @@ export class App {
 	}
 
 	private initializeRoute(): void {
-		this.express.use('/dummy', this.dummy.router);
+		this.express.use('/dummy', this._dummyRouter.router);
 	}
 
 }

@@ -1,13 +1,13 @@
 import { injectable } from "inversify";
 import { connection } from "../config/connection";
-import { DummyRepo } from "../repo/dummy.repository";
+import { DummyRepository } from "../repo/dummy.repository";
 
 
 
 @injectable()
 export class DummyService {
     constructor(
-        private _dummyRepo: DummyRepo,
+        private _dummyRepo: DummyRepository,
         private _connection: connection) {
     }
 

@@ -3,7 +3,7 @@ import { connection } from "../config/connection";
 
 
 @injectable()
-export class DummyRepo {
+export class DummyRepository {
     constructor(
         private _connection: connection) {
     }

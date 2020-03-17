@@ -5,13 +5,14 @@ import { iocContainer } from "./ioc-container";
 import { App } from './app';
 const dotenv = require('dotenv');
 const result = dotenv.config()
+console.log(result);
 if (result.error) {
 	throw result.error
 }
 
 const app = iocContainer.get<App>(App);
 const port = normalizePort(process.env.PORT || 3000);
-debug('ts-express:server');
+//debug('ts-express:server');
 app.express.set('port', port);
 
 const server = http.createServer(app.express);

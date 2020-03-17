@@ -6,7 +6,8 @@ export class connection {
     connectionstring: string;
 
     constructor() {
-        this.connectionstring = process.env.DB_connection as string;
+        this.connectionstring = 'postgresql://postgresql:root@localhost:5432/test'
+        //process.env.DB_connection as string;
     }
 
     init() {

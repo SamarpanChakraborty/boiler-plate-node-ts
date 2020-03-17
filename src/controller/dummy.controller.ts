@@ -1,6 +1,6 @@
 import { injectable } from "inversify";
 import { Request, Response, NextFunction } from "express";
-import { DummyService } from "../Service/Dummy.service";
+import { DummyService } from "../Service/dummy.service";
 
 
 @injectable()
