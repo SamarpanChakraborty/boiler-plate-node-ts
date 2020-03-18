@@ -14,7 +14,7 @@ export class DummyRoute {
 
     init() {
         console.log('router');
-        this.router.get('/', this.getRouteMethod);
+        this.router.get('/start', this.getRouteMethod);
     }
 
     private getRouteMethod(req: Request, res: Response, nextFunc: NextFunction) {
